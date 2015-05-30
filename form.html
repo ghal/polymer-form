@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="paper-styles/paper-styles.html">
+    <link rel="import" href="paper-styles/demo-pages.html">
+    <link rel="import" href="paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="iron-icons/iron-icons.html">
+    <link rel="import" href="paper-fab/paper-fab.html">
+
+
+
+
+
+    <style is="custom-style">
+        paper-checkbox {
+            display: block;
+            margin-bottom: 40px;
+        }
+        
+        paper-checkbox.blue {
+            --paper-checkbox-checked-color: var(--paper-blue-500);
+            --paper-checkbox-checked-ink-color: var(--paper-blue-500);
+            --paper-checkbox-unchecked-color: var(--paper-blue-900);
+            --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
+        }
+        
+        paper-checkbox.red {
+            --paper-checkbox-checked-color: var(--paper-red-500);
+            --paper-checkbox-checked-ink-color: var(--paper-red-500);
+            --paper-checkbox-unchecked-color: var(--paper-red-900);
+            --paper-checkbox-unchecked-ink-color: var(--paper-red-900);
+        }
+        
+        paper-checkbox.green {
+            --paper-checkbox-checked-color: var(--paper-green-500);
+            --paper-checkbox-checked-ink-color: var(--paper-green-500);
+            --paper-checkbox-unchecked-color: var(--paper-green-900);
+            --paper-checkbox-unchecked-ink-color: var(--paper-green-900);
+        }
+        
+        paper-checkbox.orange {
+            --paper-checkbox-checked-color: var(--paper-orange-500);
+            --paper-checkbox-checked-ink-color: var(--paper-orange-500);
+            --paper-checkbox-unchecked-color: var(--paper-orange-900);
+            --paper-checkbox-unchecked-ink-color: var(--paper-orange-900);
+        }
+        
+        .cover {
+            margin: 60px;
+        }
+        
+        paper-header-panel {
+            width: 940px;
+            height: 1240px;
+            margin: 12px;
+            @apply(--shadow-elevation-2dp);
+        }
+        
+        .paper-header {
+            height: 60px;
+            font-size: 16px;
+            line-height: 60px;
+            padding: 0 10px;
+            color: white;
+            transition: height 0.2s;
+        }
+        
+        .content {
+            //height: 2000px;
+        }
+        
+        .paper-header.tall {
+            height: 120px;
+        }
+        
+        .lime .paper-header {
+            background-color: var(--paper-lime-500);
+        }
+        
+        //back button
+        .horizontal-section {
+            min-width: 200px;
+        }
+        
+        paper-fab {
+            position: absolute;
+            z-index: 9999;
+            bottom: 25px;
+            display: block;
+            //margin-bottom: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            @apply(--shadow-elevation-1dp);
+        }
+        
+        paper-fab.blue {
+            --paper-fab-background: var(--paper-light-blue-500);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="horizontal center-justified layout">
+        <paper-header-panel mode="cover" class="lime">
+            <div class="paper-header tall">Φόρμα</div>
+            <div class="content cover">
+
+                <div>
+
+                    <div class="horizontal-section">
+                        <paper-fab icon="arrow-back" title="arrow-back" tabindex="0" class="blue"></paper-fab>
+
+                        <paper-checkbox class="blue" checked>blue</paper-checkbox>
+                        <paper-checkbox class="red" checked>Carbon</paper-checkbox>
+                        <paper-checkbox class="orange" checked>Hydrogen</paper-checkbox>
+                        <paper-checkbox class="green" checked>Nitrogen</paper-checkbox>
+                        <paper-checkbox class="blue" checked>Calcium</paper-checkbox>
+                    </div>
+                </div>
+            </div>
+        </paper-header-panel>
+    </div>
+
+
+
+
+</body>
+
+</html>
