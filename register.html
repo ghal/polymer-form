@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>form</title>
+    <title>Register</title>
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -27,6 +27,14 @@
     <link rel="import" href="paper-menu/paper-menu.html">
     <link rel="import" href="paper-item/paper-item.html">
     <link rel="import" href="paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="paper-input/paper-input.html">
+    <link rel="import" href="paper-input/paper-input-char-counter.html">
+    <link rel="import" href="iron-input/iron-input.html">
+    <link rel="import" href="iron-form/iron-form.html">
+
+
+
+
 
     <link rel="stylesheet" href="paper-styles/demo.css">
     <link rel="stylesheet" href="css/style.css">
@@ -141,9 +149,9 @@
                 <span>Menu</span>
             </paper-toolbar>
             <paper-menu>
-                <paper-item label="One">Home
+                <paper-item label="One">Αρχική Σελίδα
                 </paper-item>
-                <paper-item label="Two">Form
+                <paper-item label="Two">Φόρμα
                 </paper-item>
             </paper-menu>
         </paper-header-panel>
@@ -153,100 +161,32 @@
                 <span flex>Title</span>
             </paper-toolbar>
             <div class="content">
+
                 <div id="forma">
                     <div class="vertical-section">
-                        <h4>1</h4>
+                        <h1 style="text-align:center;font-weight:100">Εγγραφή</h1>
+                        <form is="iron-form" id="form" method="post" action="/">
 
-                        <paper-checkbox class="purple">check </paper-checkbox>
-                        <paper-checkbox class="blue">check </paper-checkbox>
-                        <paper-checkbox class="blue">check </paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-
-                        <label for="">select num</label>
-                        <select id="" name="">
-                            <option value="1" selected="selected">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                        </select>
+                            <paper-input label="Όνομα Γονέα." pattern="[a-zA-Z]|[α-ωΑ-Ω]+" maxlength="50" error-message="Λανθασμένο Πεδίο!" required></paper-input>
+                            <paper-input label="Επώνυμο Γονέα." pattern="[a-zA-Z]*" maxlength="50" error-message="Λανθασμένο Πεδίο!" required></paper-input>
+                            <br>
+                            <paper-input label="Όνομα Χρήστη." pattern="[a-zA-Z]*" maxlength="50" error-message="Λανθασμένο Πεδίο!" required></paper-input>
+                            <paper-input type="email" label=" Email." pattern="^[0-9]*$" maxlength="50"></paper-input>
+                            <paper-input type="number" label="Εισάγετε τον αριθμό του κινητού σας." char-counter pattern="^[0-9]*$" maxlength="10" error-message="Λανθασμένο Πεδίο!" required></paper-input>
+                            <br>
+                            <paper-button raised onclick="submitForm()">Εγγραφή</paper-button>
+                        </form>
                     </div>
-
-                    <div class="vertical-section">
-                        <h4>2</h4>
-
-
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <label for="">select</label>
-                        <select name="">
-                            <option value="0">--select--</option>
-                            <option value="1">select</option>
-                            <option value="2">select</option>
-                        </select>
-                    </div>
-                    <div class="vertical-section">
-                        <h4>3</h4>
-
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <paper-checkbox class="blue">check</paper-checkbox>
-                        <label for="">select</label>
-
-                        <select name="">
-                            <option value="0">--select--</option>
-                            <option value="1">select</option>
-                            <option value="2">select</option>
-                            <option value="3">select</option>
-                            <option value="4">select</option>
-                        </select>
-                        <br>
-                        <br>
-                        <label for="eisodima">select</label>
-                        <select name="eisodima">
-                            <option value="0">--select-</option>
-                            <option value="1">select</option>
-                            <option value="2">select</option>
-                            <option value="3">select</option>
-                            <option value="4">select</option>
-                            <option value="5">select</option>
-                            <option value="6">select</option>
-                            <option value="7">select</option>
-                            <option value="8">select</option>
-                        </select>
-
-                    </div>
-
-
-                    <paper-fab icon="arrow-back" title="arrow-back" tabindex="0" class="red back-btn"></paper-fab>
-                    <paper-fab icon="send" title="send" tabindex="0" class="red send-btn"></paper-fab>
                 </div>
-
-
-
-
             </div>
         </paper-header-panel>
     </paper-drawer-panel>
 
-
+    <script>
+        function submitForm() {
+            document.getElementById('form').submit();
+        }
+    </script>
     <script src="js/menu.js"></script>
 </body>
 
